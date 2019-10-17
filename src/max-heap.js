@@ -119,7 +119,7 @@ class MaxHeap {
             return;
         };
 
-        if(node.priority < node.parent.priority) return;
+        if(node.priority <= node.parent.priority) return;
 
         let parentIndex = this.parentNodes.indexOf(node.parent);
         let nodeIndex = this.parentNodes.indexOf(node);

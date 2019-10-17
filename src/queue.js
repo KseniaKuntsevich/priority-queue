@@ -4,28 +4,28 @@ class PriorityQueue {
 	constructor(maxSize) {
 		this.maxSize = maxSize || 30;
 		this.heap = new MaxHeap()
-		this.size = 0;
+		this.length = 0;
 
 
 	}
 
 	push(data, priority) {
-		if(this.size === this.maxSize){
+		if(this.length === this.maxSize){
 			throw new Error ('Queue is full, maxSize is: ' + this.maxSize);
 		}
 		this.heap.push(data, priority);
 
-		this.size++;
+		this.length++;
 
 	}
 
 	shift() {
-		if(this.size === 0) {
+		if(this.length === 0) {
 			throw new Error ('Has not items to shift');
 		}
 		let removed = this.heap.pop();
 
-		this.size--;
+		this.length--;
 
 		return removed;
 
@@ -33,11 +33,11 @@ class PriorityQueue {
 	}
 
 	size() {
-		return this.size;
+		return this.length;
 	}
 
 	isEmpty() {
-		return this.size === 0;
+		return this.length === 0;
 	}
 }
 
